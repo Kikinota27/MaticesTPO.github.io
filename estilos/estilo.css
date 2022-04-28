@@ -1,7 +1,7 @@
 *{
 margin: 0px;
 padding: 0px;
-font-family: 'Courier New', Courier, monospace;
+font-family: 'Nunito', sans-serif;
 }*
 body{
     background-color: #fae2da;
@@ -28,19 +28,21 @@ a{
 nav a:hover{
     background: antiquewhite;
 }
-
+/*flex del nav*/
 @media all and (max-width: 800px){
     nav{
-        justify-content: space-around;
+        justify-content:space-around;
     }
     .medio{flex-flow: column wrap;}
 }
-@media all and (min-width: 800px){
-    .shome{flex: 3 0px;}
-    .ahome{order: 1;}
-}
 @media all and (min-width: 600px){
     .ahome{flex: 1 0 0}
+}
+
+/*flex del medio */
+@media all and (min-width: 800px){
+    .shome{flex: 3 0px;}
+    .ahome{order: 1;}  
 }
 
 @media all and (max-width: 600px){
@@ -67,6 +69,7 @@ aside{
     padding-left: 0.5em;
     text-align: center;
 }
+/*Productos*/
 .produc{
     display: flex;
     flex-flow: row nowrap;
@@ -94,6 +97,21 @@ h3{
     color: rgb(19, 102, 74);
     padding-right: 0.25em;
 }
+
+/*Formulario contacto*/
+input{
+    margin: 3px;
+}
+.datoscontacto{
+    display: flex;
+    flex-flow:column
+}
+
+
+
+
+
+
 
 footer{
     background-color: #fabfae;
