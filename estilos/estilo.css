@@ -119,6 +119,9 @@ footer{
     width: 100%;
     
 }
+.fhome{
+    margin-top: 320px;
+}
 ul{
     color: rgb(121, 72, 9);
     display: flex;
