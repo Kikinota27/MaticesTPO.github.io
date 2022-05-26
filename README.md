@@ -7,5 +7,5 @@ Este posee:
 La tienda nube (en el footer) no tiene un link porque no esta disponible por el momento.
 Aunque la validacion de datos ESTA HECHA, hay una parte que no funcionan(validacion de datos al clicker en el boton de submit("enviar")).
 La animacion se encuntra en los titulos de h3.
-La pagina donde se aprecia mas la responsibidad es en la de index.html("Home")
+La pagina donde se aprecia mas la responsibidad es en la de index.html("Home").
 Falta subir los productos.
