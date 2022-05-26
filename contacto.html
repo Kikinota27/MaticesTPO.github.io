@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="estilos/estilo.css"> 
     <link rel="shortcut icon" href="Imagenes/favicon-32x32.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
     <title>Matices - Contacto</title>
 </head>
 <body>
@@ -22,71 +22,89 @@
         </nav>
     </header> 
 
-    <section class="formulario">
+    <section class="formulario" id="formulario">
         <h3>Cotizacion - Pedidos Espeicales</h3>
         <h4>Datos de Contacto</h4>
         <div class="datoscontacto">
-            <div class="entrada nombre">
-                <label>Nombre</label>
-                <input type="text" name="nombre" id="nombre">
+            <!--Nombre-->
+            <div class="formulario__entrada" id="entrada__nombre">
+                <label class="formulario__label">Nombre</label>
+                <input type="text"  class="formulario__input" required="*" name="nombre" id="nombre">
+                <p class="formulario__input-error">El nombre debe tener entre 1 y 40 caracteres y solo puede tener letras</p>
             </div>
-            <div class="entrada apellido">
-                <label>Apellido</label>
-                <input type="text" name="apellido" id="apellido">
+            <!--Apellido-->
+            <div class="formulario__entrada" id="entrada__apellido">
+                <label class="formulario__label">Apellido</label>
+                <input type="text" class="formulario__input" required="*" name="apellido" id="apellido">
+                <p class="formulario__input-error">El Apellido debe tener entre 1 y 40 caracteres y solo puede tener letras</p>
             </div>
-            <div class="entrada tel">
-                <label>Email</label>
-                <input type="email" name="email" id="email">
+            <!--Email-->
+            <div class="formulario__entrada" id="entrada__email">
+                <label class="formulario__label">Email</label>
+                <input type="email" class="formulario__input" required="*" name="email" id="email" placeholder="email@email.com">
+                <p class="formulario__input-error">El email solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
             </div>
-            <div class="entrada tel">
-                <label>Tel</label>
-                <input type="tel" name="tel" id="tel">
-            </div>
-        </div>
-        
-        <h4>Datos del Pedido</h4>
-        <div class="datospedido">
-            <div class="tipopedido">
-                <label>Tipo de Pedido</label>
-                <input list="tipoPedido" name="list" />
-                    <datalist id="tipoPedido">
-                    <option label="Cantidades Mayorista" value="Cantidades Mayorista">
-                    <option label="Medidas Especiales" value="Medidas Especiales">
-                    </datalist>
-            </div>
-            <!--Esta afuera del div para que este arriba-->
-            <label>Descripcion de Pedido</label>
-            <div class="descripcionpedido"> 
-                <textarea rows="15" size="100" style="width: 100%;"  name="descripcionpedido" ></textarea>
+            <!--Tel-->
+            <div class="formulario__entrada" id="entrada__tel">
+                <label class="formulario__label">Tel</label>
+                <input type="tel" class="formulario__input" required="*" name="tel" id="tel">
+                <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
             </div>
         </div>
 
-                <input type="submit" value="Enviar">
+
+
+         <div class="datosDePedido">
+             <h4>Datos del Pedido</h4>
+            <div class="datospedido">
+            <!--Tipo de pedido-->
+            <div class="formulario__entrada" id="entrada__tipopedido">
+                <label class="formulario__label" >Tipo de Pedido</label><br>
+                <label class="checkboxLabel">Cantidades Mayorista</label>
+                <input type="checkbox" name="cantidades_mayorista" id="cantidades_mayorista">
+                <label class="checkboxLabel">Medidas Especiales</label>
+                <input type="checkbox" name="medidas_especiales" id="medidas_especiales">  
+            </div>
+            
+            <!--Descripcion de pedido-->
+            <label class="formulario__label">Descripcion de Pedido</label>
+            <div class="formulario__entrada" id="entrada__descripcionpedido"> 
+                <textarea rows="15" class="formulario__input" size="100" style="width: 100%;"  name="descripcionpedido"  id="descripcionPedido"></textarea>
+            </div>
+         </div>
+            
+     
+         <p class="formulario__input-error">Por favor rellena el formulario correctamente. </p>
+         <button type="submit" class="formulario__btn">Enviar</button>
+         <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
     </section>
+
+
 
     <footer>
         <ul>
             <li>
-                <!--Whatsapp,link y icono -->
+                <!--Whatsapp,link e icono -->
             <a href="https://wa.me/5491135686293" target="_blank" rel="noopener noreferrer"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAbRJREFUSEvNleExBEEQRt9lQATIQAbIgAgQASJABIiADMiAiwARkAEioN5V99aYnZ37dVXXVVNXtzvTX/fr7tkZK7bZiv2zFgL7wDGwG+sbeANegHn8ToLoZbAN3AMK/BRON0JoL7w+AaeAwiObEjDaZ1ggvAWuJkI8B27C+VErm5aAEX5E1IcRea8XDOYB2AJ26kxaAqYsFpesFXR9dlQUeQU8ayaD1QK58TqwWAcPytfoepa4FFBoYbWAvM+AzXCah9xrIUXRs1/gDvBcU8DW08SjlQL/IptQqc+PMpCzm07CgYgsuIjMaplJwJkZ9taIFLCwdk9aZiEeMfXMdr4s0dcCoxTDm86NzN8LIIfQYso8h8z/NorvmzXIItsxdVvmO5250kl2nA59rkgiHtUgmZeHSiQWXwx5TXiF5Lzo1KvloJzo1qBNYSqFDMRlvTIb5+W96MAmIh+OenlJYWVu5GLNbIYjdQZ2z2MU8isOWIuykHnY68OhtMv0M3LuxqlJbgUtOsVEYtQ5jH4T5N+8q2oBmeaw6dD/sjbKbD8j97nLjsmaNUmuxSdz2fXQfb/yDP4AZJloGU7UfncAAAAASUVORK5CYII="/></a> 
      
         </li>
             <li> 
-                <!--Instagram, link y icono-->
+                <!--Instagram, link e icono-->
                 <a href="https://instagram.com/maticesdecohogar?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAX1JREFUSEvNlU0yBEEQhb+5gZUtToATYGOLA4jgBm6AEwg7O5zAWFrhBDgB4QJ+LkB8olLUVJTumkXHyIiKmumuypf5MvP1iIFtNLB/ZgawCBwCK2l1JfoIuE7TPnG2lsEecJ5O3QPvtYvpvQHMAWvp/z5wkSOUAF54AHS8nZy3lMmMx8AysJoHVAKIrmMvGHmf7QLHwAewAzwDl4As/FgJ8AK41iueBTZCTc6vgU3gBngFFoC7tC/9BfCVinWQAcjxbaXYOjsDPoH5FLnPrMdv4GUGApjyUQZgtFJm2vKsmY10Wq+N7OzUADq6SvyG8/AX3Sb38W5qADNxHmrtLHVvRcb/D2BwiqIlbUE5tzU1f58AT0VLN1GkppRt6sWYgShybdp7AfoGTSmJrMqu8rkAtrSrOsn29hbgJLZIRT7wOu2VihA7I1EZzajFdO68eL9T7KKAIdcCdcl1aFbsvXId0RqJhfaiHdRlKqmBOJTKyoTN7JPZwnvTmcEz+AZJz2cZU1H38wAAAABJRU5ErkJggg=="/></a>
             </li>
             <li>
-                <!--Mail, link y icono-->
+                <!--Email, link e icono-->
                 <a href="mailto:maticesdecohogar@gmail.com" target="_blank" rel="noopener noreferrer"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAR1JREFUSEvdleFNw0AMhb9MABsAG8AEwAawAZ2gMAl0ArpB2QCYAEaADdoJQB+ypVNIyjVRhFT/SZSz37OffU7DxNZMjM9+EVwAj8DxSNk+gBnwIk4pkQdHI8EzXKyTNsFXnJ4B7wOJToG3iP1JvqwgCdZR4tOOJFch8eFfBIn7ANxVkug7b/n2ViDofTjbqGvAqrrMbFeAA6KVsb0EHqil4AcBftnRF32eAUk2QWLvUuqtBGZjoH04j+xugUXxnlW+AuqfVVYTlL1IfZfx8SaeEkpc2s4EBpuh4EqmKYkkXZM2iEBQNS8r6LsrgwkqJ7a+ybWAbb//q8AxyyYOzT7jPnMrl7vI22gTx25UwZ2wX+t6bNad8fv1y5xEom9+ED0ZymZNKwAAAABJRU5ErkJggg=="/></a>
             </li>
             <li> 
-                <!--Tienda nube, link y icono-->
+                <!--Tienda nube, link e icono-->
                 <a href="" target="_blank" rel="noopener noreferrer"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAV9JREFUSEvllP0tRFEQR89WgArQARWgAlSAClABKqADVGBVgAroAB1QATly5+W+8Z68fckmxPyz2dk7c+bjNzthzjaZc376ABfA4YxwY45zTBfgFDiZMXk8PwOMbywDVoBHYBHYAu6BHeAGeAA2S6T+DWAXmBb/HfAGrAMvQcgAH28DtyWx76KjurouX8T6KfjLaoDVWcU7sFZVkas1rqsru38CFqruWwDbWgbyHG3boNUKarLnMpKlauTRmbl83wL8lMi3XQD9AozVAuwU3GMLcAXslaWF3C7TYp2tgdl/UADnZXzXwH4GBD0r1Go0x1Rbn7/VbVbRR5XhtSzNSqzaQ1Jhmio7KqOxc0Xh/sKavH2AsX8hUeDvAngfLtUd1aYUXa53Ejaqg7iPvHy/N3ovP44CfAvqSwb8A0D8XXTNe6jP+2kEkfWuYjyc+miGJvadyT3MRlljD2ow9O8DPgHWLF8ZxUgN9QAAAABJRU5ErkJggg=="/></a>
             </li>
                 
         </ul>
         <p class="pfooter">Derechos Reservados</p>
     </footer>
-    
+
+   <script src="js/formulario.js"></script> 
 </body>
 </html>

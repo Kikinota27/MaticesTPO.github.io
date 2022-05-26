@@ -6,6 +6,48 @@ font-family: 'Nunito', sans-serif;
 body{
     background-color: #fae2da;
 }
+img{
+    max-width: 10em;
+    border-radius: 0.25em;
+}
+h3{
+    color: rgb(19, 102, 74);
+    padding-right: 0.25em;
+    font-size: 0.745cm;
+    -webkit-animation: tracking-in-expand 0.7s ease-in-out ;
+	        animation: tracking-in-expand 0.7s ease-in-out ;
+}
+
+@-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+
+
+
+
 header{
 background: #fabfae;
 }
@@ -28,18 +70,21 @@ a{
 nav a:hover{
     background: antiquewhite;
 }
+
 /*flex del nav*/
 @media all and (max-width: 800px){
     nav{
         justify-content:space-around;
     }
     .medio{flex-flow: column wrap;}
+    
 }
 @media all and (min-width: 600px){
     .ahome{flex: 1 0 0}
+    
 }
 
-/*flex del medio */
+/*flex del medio de home */
 @media all and (min-width: 800px){
     .shome{flex: 3 0px;}
     .ahome{order: 1;}  
@@ -50,11 +95,34 @@ nav a:hover{
         flex-flow: column wrap;
         padding: 0;
     }
+    .nosotras{
+        flex-flow: column wrap;
+    }
 }
 
+
+
+
+/*Home*/
 .medio{
     display: flex;
+    
 }
+.ahome{
+    padding: 10px;
+}
+
+.nosotras{
+    display: flex; 
+    align-items: center; 
+}
+
+.imgnosotras{
+    width: 100%;
+    height: auto;
+}
+
+
 section{
     background-color: rgba(116, 213, 245, 0.384);
     margin: 1em;
@@ -62,6 +130,9 @@ section{
     padding: 1em;
 }
 
+/*Animacion, desliz del titulo*/
+
+  
 aside{
     background-color: rgba(116, 213, 245, 0.384);
     margin: 1em;
@@ -69,6 +140,10 @@ aside{
     padding-left: 0.5em;
     text-align: center;
 }
+
+
+
+
 /*Productos*/
 .produc{
     display: flex;
@@ -86,30 +161,69 @@ article{
     align-items: center;
 }
 
-h4{
 
-}
-img{
-    max-width: 10em;
-    border-radius: 0.25em;
-}
-h3{
-    color: rgb(19, 102, 74);
-    padding-right: 0.25em;
-}
+
+
 
 /*Formulario contacto*/
+
 input{
     margin: 3px;
 }
 .datoscontacto{
     display: flex;
-    flex-flow:column
+    flex-flow:column;
 }
 
 
+.formulario__label{
+    color: rgba(4, 105, 72, 0.945);
+}
 
 
+.formulario__entrada-incorrecto{
+	color: #bb2929;
+}
+
+.formulario__input-error{
+    font-size: 12px;
+	margin-bottom: 0;
+    display: none;
+}
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__mensaje-exito {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+.formulario__btn {
+    margin: 10px;
+	height: 30px;
+	line-height: 30px;
+	width: 30%;
+	background: rgba(40, 133, 128, 0.568);
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
 
 
 
@@ -120,7 +234,7 @@ footer{
     
 }
 .fhome{
-    margin-top: 320px;
+    margin-top: 100px;
 }
 ul{
     color: rgb(121, 72, 9);
